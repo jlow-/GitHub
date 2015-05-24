@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Body Fat Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Body Fat Calculator">
+  <meta name="author" content="jlow">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Body Fat Calculator</h1>
+    <h2>Based on US Navy Measurement Technique</h2>
+    <p>jlow<br/>Developing Data Products</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Body Fat Calculator- What it does?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>It is able to provide a fat estimate base on dimensions of a human body of both genders.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Who discovered this method?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The U.S. Navy came up with the straightforward method to measure body fat from fat accumulation on different parts of the body. Female and male calculations are different due to the accumulation of fats congregating at different areas.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How to measure?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Height - measure body height without shoes, from top of head to bottom of feet.</p>
+
+<p>Waist - Measure the circumference of your waist at a horizontal level around the navel for men, and at the level with the least width for women. Don&#39;t pull your stomach in.</p>
+
+<p>Neck - Measure the circumference of the neck.</p>
+
+<p>Hip - For women only: Measure the circumference of the hips, at the largest horizontal measure</p>
+
+<p>*All values in centimeters</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How it is computed?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Use the above variables and plug it into the formulas according to gender!</p>
+
+<p>Female formula:
+163.205 * log10(waist + hip - neck) -97.684 * log10(height) - 104.912</p>
+
+<p>Male formula:
+86.010 * log10(waist - neck) -70.041 * log10(height) +30.30</p>
+
+<p>Assuming a female with the following measurements and her expected bady fat percentage:</p>
+
+<pre><code class="r">height &lt;- 150
+neck &lt;- 80
+waist &lt;- 90
+hip &lt;- 100
+163.205 * log10(waist + hip - neck) -97.684 * log10(height) - 104.912
+</code></pre>
+
+<pre><code>## [1] 15.68419
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Body Fat Calculator- What it does?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Who discovered this method?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How to measure?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How it is computed?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

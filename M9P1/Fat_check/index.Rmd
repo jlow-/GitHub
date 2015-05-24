@@ -1,0 +1,62 @@
+---
+title       : Body Fat Calculator
+subtitle    : Based on US Navy Measurement Technique 
+author      : jlow
+job         : Developing Data Products
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : mathjax            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Body Fat Calculator- What it does?
+
+
+It is able to provide a fat estimate base on dimensions of a human body of both genders.
+
+
+--- .class #id 
+
+## Who discovered this method?
+
+
+The U.S. Navy came up with the straightforward method to measure body fat from fat accumulation on different parts of the body. Female and male calculations are different due to the accumulation of fats congregating at different areas.
+
+--- .class #id 
+
+## How to measure?
+
+Height - measure body height without shoes, from top of head to bottom of feet.
+
+Waist - Measure the circumference of your waist at a horizontal level around the navel for men, and at the level with the least width for women. Don't pull your stomach in.
+
+Neck - Measure the circumference of the neck.
+
+Hip - For women only: Measure the circumference of the hips, at the largest horizontal measure
+
+*All values in centimeters
+
+
+--- .class #id 
+
+## How it is computed?
+
+Use the above variables and plug it into the formulas according to gender!
+
+Female formula:
+163.205 * log10(waist + hip - neck) -97.684 * log10(height) - 104.912
+
+Male formula:
+86.010 * log10(waist - neck) -70.041 * log10(height) +30.30
+
+Assuming a female with the following measurements and her expected bady fat percentage:
+```{r}
+height <- 150
+neck <- 80
+waist <- 90
+hip <- 100
+163.205 * log10(waist + hip - neck) -97.684 * log10(height) - 104.912
+```
+
